@@ -1,6 +1,7 @@
 package com.example.musicapp.repository
 
 import android.content.Context
+import android.util.Log
 import com.example.musicapp.R
 import com.example.musicapp.Track
 import com.squareup.moshi.JsonAdapter
@@ -10,7 +11,11 @@ import java.io.BufferedReader
 import java.io.InputStream
 import java.lang.reflect.Type
 
-class MusicRepository constructor(var context: Context) {
+class MusicRepository private constructor(var context: Context) {
+
+    init {
+        Log.i("AppMusic", "class MusicRepository, init{}"+this.toString())
+    }
 
     private var listOfTracks: MutableList<Track> = mutableListOf()
 
@@ -57,5 +62,19 @@ class MusicRepository constructor(var context: Context) {
     fun getCurrent(): Track {
         setListOfTrackIfEmptyList()
         return listOfTracks.get(currentItemIndex)
+    }
+
+    companion object {
+        @Volatile
+        private lateinit var instance: MusicRepository
+
+        fun getInstance(context: Context): MusicRepository {
+            synchronized(this) {
+                if (!::instance.isInitialized) {
+                    instance = MusicRepository(context)
+                }
+                return instance
+            }
+        }
     }
 }

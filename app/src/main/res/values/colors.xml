@@ -7,4 +7,19 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="pressed">#FF4081</color>
+    <color name="colorButtonClick">#87ec69</color>
+
+    <color name="button_default_bg_tint">#D8D8D8</color>
+    <color name="button_selected_bg_tint">#92FD17</color>
+    <color name="button_not_selected_bg_tint">@color/button_default_bg_tint</color>
+    <!--  <color name="button_default_enable_bg_tint">@color/button_tint_color</color>-->
+    <color name="button_disable_bg_tint">#E8E8E8</color>
+    <color name="button_enabled_bg_tint">@color/button_default_bg_tint</color>
+
+    <color name="button_pressed_bg_tint">@color/pressed</color>
+
+    <color name="button_default_text">@color/black</color>
+    <color name="button_disable_text">#979797</color>
+    <color name="button_enabled_text">@color/button_default_text</color>
 </resources>

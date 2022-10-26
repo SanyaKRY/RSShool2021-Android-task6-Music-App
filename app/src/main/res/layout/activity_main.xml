@@ -8,46 +8,36 @@
 
     <Button
         android:id="@+id/buttonPrev"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/button_style"
         android:text="Prev"
-        android:layout_marginTop="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonPlay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/button_style"
         android:text="Play"
-        android:layout_marginTop="30dp"
         app:layout_constraintStart_toEndOf="@+id/buttonPrev"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonPause"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/button_style"
         android:text="Pause"
-        android:layout_marginTop="30dp"
         app:layout_constraintStart_toEndOf="@+id/buttonPlay"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonStop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/button_style"
         android:text="Stop"
-        android:layout_marginTop="30dp"
         app:layout_constraintStart_toEndOf="@+id/buttonPause"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonNext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/button_style"
         android:text="Next"
-        android:layout_marginTop="30dp"
         app:layout_constraintStart_toEndOf="@+id/buttonStop"
         app:layout_constraintTop_toTopOf="parent" />
 

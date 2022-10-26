@@ -13,4 +13,18 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="button_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:backgroundTint">@color/btn_tint_color</item>
+        <item name="android:textColor">@color/btn_text_color</item>
+    </style>
 </resources>

@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         })
 
         myViewModel.states.observe(this, Observer { state ->
+
             when (state) {
                 PlaybackStateCompat.STATE_SKIPPING_TO_PREVIOUS,
                 PlaybackStateCompat.STATE_SKIPPING_TO_NEXT,
@@ -53,6 +54,10 @@ class MainActivity : AppCompatActivity() {
                     binding.buttonPause.isEnabled = true
                     binding.buttonPrev.isEnabled = true
                     binding.buttonStop.isEnabled = true
+
+                    binding.buttonPlay.isSelected = true
+                    binding.buttonPause.isSelected = false
+                    binding.buttonStop.isSelected = false
                 }
                 PlaybackStateCompat.STATE_PAUSED -> {
                     binding.buttonPlay.isEnabled = true
@@ -60,6 +65,11 @@ class MainActivity : AppCompatActivity() {
                     binding.buttonPause.isEnabled = false
                     binding.buttonPrev.isEnabled = true
                     binding.buttonStop.isEnabled = true
+
+                    binding.buttonPlay.isSelected = false
+                    binding.buttonPause.isSelected = true
+                    binding.buttonStop.isSelected = false
+
                 }
                 PlaybackStateCompat.STATE_STOPPED -> {
                     binding.buttonPlay.isEnabled = true
@@ -67,6 +77,10 @@ class MainActivity : AppCompatActivity() {
                     binding.buttonPause.isEnabled = false
                     binding.buttonPrev.isEnabled = true
                     binding.buttonStop.isEnabled = false
+
+                    binding.buttonPlay.isSelected = false
+                    binding.buttonPause.isSelected = false
+                    binding.buttonStop.isSelected = true
                 }
             }
         })
@@ -183,5 +197,14 @@ class MainActivity : AppCompatActivity() {
 
         // Register a Callback to stay in sync
         mediaController.registerCallback(controllerCallback)
+    }
+
+    companion object {
+
+        private const val BUTTON_PLAY = 1
+        private const val BUTTON_STOP = 2
+        private const val BUTTON_PAUSE = 3
+        private const val BUTTON_NEXT = 4
+        private const val BUTTON_PREVIOUS = 5
     }
 }
